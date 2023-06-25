@@ -1,15 +1,15 @@
 import math
 import matplotlib.pyplot as plt
+import complexNum
 
 
-def  theAbsoluteValue(x,y):
+def  the_absolute_value(x,y):
     return math.sqrt(x**2+y**2)
 
 
-
-def  complexToPolar(x, y):
+def complex_to_polar(x, y):
     z = complex(x, y)
-    r = theAbsoluteValue(z.real, z.imag)
+    r = the_absolute_value(z.real, z.imag)
     θ = math.degrees(math.atan2(y, x))
     w = r, θ
     return w
@@ -18,9 +18,6 @@ def printW(x):
     a = x[0]
     b = x[1]
     print(f'{a:.2f} * cis({b:.2f})')
-
-printW (complexToPolar(5,4))
-
 
 
 
