@@ -84,8 +84,8 @@ def run(lastPoint):
     plt.scatter(z.real, z.image, color="red")
     plt.plot([0, z.real], [0, z.image], color=zColor.rColor)
     draw_angle(z.angle, lastPoint.angle, z.radius, zColor.rColor)
-    print(z.angle)
-    print(zColor.rColor)
+    print(f'angle is : {z.angle}')
+
     return z
 
 def mainRun():
@@ -97,6 +97,7 @@ def mainRun():
             run(runZ)
         elif x == "no":
             plt.show()
+            quit()
         else:
             print("Invalid input. Please enter 'yes' or 'no'.")
 
