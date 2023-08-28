@@ -77,21 +77,28 @@ def enter_point():
             print("Invalid input. Please enter 'complex' or 'polar'.")
 
 
-def run():
+def run(lastPoint):
     z = enter_point()
     zColor = randomColor()
     create_circle((z.radius))
     plt.scatter(z.real, z.image, color="red")
     plt.plot([0, z.real], [0, z.image], color=zColor.rColor)
-    draw_angle(z.angle, 0, z.radius, zColor.rColor)
+    draw_angle(z.angle, lastPoint.angle, z.radius, zColor.rColor)
     print(z.angle)
     print(zColor.rColor)
-    plt.show()
+    return z
 
 def mainRun():
+    runZ=run(complexN(0, 0))
     while True:
-        run()
         print("another number?")
         x = input().lower()
         if x == "yes":
+            run(runZ)
+        elif x == "no":
+            plt.show()
+        else:
+            print("Invalid input. Please enter 'yes' or 'no'.")
+
+mainRun()
 
